@@ -123,25 +123,11 @@ h2 {
   border-radius: 0.3rem;
   transition: all 0.15s ease-in-out;
 }
-/* .stopButton {
-  font-size: 1.1rem;
-  font-weight: 700;
-  background-color: var(--bgColor);
-  padding: 0.5rem 0.7rem;
-  color: var(--buttonColor);
-  border-radius: 0.3rem;
-  transition: all 0.15s ease-in-out;
-} */
 
 .startButton:disabled {
   color: white;
   background-color: var(--disabledBtn);
 }
-/* .stopButton:disabled {
-  color: white;
-  background-color: var(--disabledBtn);
-} */
-
 
 .nav-button:hover {
   color: var(--buttonHover);
@@ -151,10 +137,6 @@ h2 {
   color: white;
   background-color: var(--buttonHover);
 }
-/* .stopButton:hover {
-  color: white;
-  background-color: var(--buttonHover);
-} */
 
 .dropMenu-menu {
   border-radius: 0.3rem;
@@ -342,7 +324,6 @@ h2 {
 .disable{
   pointer-events: none;
 }
-
 .tableNode {
   border: 1px solid black;
   background-color: white;
@@ -441,4 +422,3 @@ h2 {
     transform: scale(1);
   }
 }
-

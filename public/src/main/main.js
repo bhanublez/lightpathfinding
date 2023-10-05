@@ -27,7 +27,6 @@ const tableBody = document.querySelector(".table-body"); //table body
 const startBtn = document.querySelector(".startButton"); //start button
 const clearBtn = document.querySelector(".clearButton"); //clear button
 const resetPath = document.querySelector(".resetPath"); //reset path button
-// const stopBtn = document.querySelector(".stopButton"); //stop button
 
 const algorithms = document.querySelectorAll(".alg"); //algorithm buttons
 const speedButtons = document.querySelectorAll(".speed"); //speed buttons
@@ -47,9 +46,8 @@ const convertTableToGraph = () => {
 // Functions used to visualize the path
 const visualize = async (arr) => {
   disableAllButtons();
-  stopBtn.disabled = false;
-  await animateSearch(arr[0]); // This function animates the search here await is used to wait for the animation to complete
-  await animatePath(arr[1]); //  This function animates the path
+  await animateSearch(arr[0]);// This function animates the search here await is used to wait for the animation to complete
+  await animatePath(arr[1]);//  This function animates the path
   enableAllButtons();
 };
 
@@ -66,10 +64,10 @@ const animateSearch = async (arr) => {
       null;
     } else {
       arr[i].val.id = "visited";
-      handle.classList.add("disable");
     }
+    handle.classList.add("disable");
   }
-  handle.classList.remove("disable");
+   handle.classList.remove("disable");
 };
 
 // Functions used to animate the path
@@ -105,7 +103,7 @@ const setDescription = (algorithm) => {
         "BFS is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level."
       );
       break;
-    case `Dijkstra's algorithm`:
+    case `Dijkstra's algorithm Search`:
       desc.append(
         "This algorithm is used to find the shortest path between two nodes of a weighted graph. It is a greedy algorithm that solves the single-source shortest path problem for a directed graph with non-negative edge weights."
       );
@@ -130,15 +128,13 @@ const handleStart = () => {
     return handleError("Mention start and target node Please");
 
   //getting the x and y coordinates of start and target node
-  const startX = Number(startNode.datatype.split("-")[0]); // This variable represents the x coordinate of the start node
-  const startY = Number(startNode.datatype.split("-")[1]); // This variable represents the y coordinate of the start node
-  const targetX = Number(targetNode.datatype.split("-")[0]); // This variable represents the x coordinate of the target node
-  const targetY = Number(targetNode.datatype.split("-")[1]); // This variable represents the y coordinate of the target node
+  const startX = Number(startNode.datatype.split("-")[0]);// This variable represents the x coordinate of the start node
+  const startY = Number(startNode.datatype.split("-")[1]);// This variable represents the y coordinate of the start node
+  const targetX = Number(targetNode.datatype.split("-")[0]);// This variable represents the x coordinate of the target node
+  const targetY = Number(targetNode.datatype.split("-")[1]);// This variable represents the y coordinate of the target node
 
   //switch case to choose the algorithm
   switch (algorithm) {
-    //Disable mouse movement
-
     case "Depth First Search":
       visualize(dfs(graph.vertices[startX][startY]));
       break;
@@ -156,12 +152,6 @@ const handleStart = () => {
       break;
   }
 };
-
-//function to stop the animation
-// const handelStop = () => {
-//   //Reset table and stop handlStart processing
-//   clearPrevSearch();
-// };
 
 //function to set the description of the algorithm
 const handleAlgChoice = (element) => {
@@ -223,4 +213,3 @@ clearBtn.onclick = clearTable;// This function sets the node to unvisited
 resetPath.onclick = clearPrevSearch;// This function sets the node to unvisited
 startBtn.onclick = handleStart;// This function sets the node to unvisited
 tableBody.onmousemove = setWall;// This function sets the node to unvisited
-// stopBtn.onclick = handelStop;// This function sets the node to unvisited
