@@ -1,0 +1,421 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+/*Providing color to the elements used in code in program*/
+:root {
+  --bgColor: #589bd3;
+  --secondary: #1f0067;
+  --buttonColor: white;
+  --buttonHover: #ec173e;
+  --tertiary: #6fec6f;
+  --forthColor: #ffffff59;
+  --wall: #565656;
+  --unvisited: white;
+  --visited: rgba(73, 246, 223, 0.75);
+  --path: yellow;
+  --curr: #a54859;
+  --disabledBtn: #76323f6c;
+  --vis25: #fe03a2;
+  --vis50: rgba(17, 104, 217, 0.75);
+  --vis75: rgba(0, 217, 159, 0.75);
+}
+
+/*Button structure detail  css beta*/
+button {
+  outline: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/*Disable button function css*/
+button:disabled {
+  color: var(--disabledBtn);
+}
+
+/*Setting backGround color animation css*/
+body {
+  background-color: var(--bgColor);
+}
+
+/*Making relative menu means to menu icon dos'nt override each other*/
+.menu {
+  position: relative;
+}
+.menu > button:focus {
+  color: var(--buttonHover);
+}
+
+a {
+  text-decoration: none;
+}
+
+h3,
+h2 {
+  color: var(--secondary);
+}
+
+/* Main section can say top bar */
+.nav-bar {
+  background-color:#337ab7;
+  border-bottom: 10px solid #05040444;
+  padding: auto;
+}
+
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.7rem;
+}
+
+.nav-buttons-container {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  min-width: 40rem;
+}
+
+.nav-buttons-container > div {
+  margin: 0 0.5rem;
+}
+.nav-logo > span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-logo:first-child {
+  color: var(--buttonColor);
+    margin-right: 0.5rem;
+}
+.nav-logo :last-child {
+  color: var(--tertiary);
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+  font-weight: 600;
+  border-radius: 0.3rem;
+  color: var(--buttonColor);
+  transition: color 0.15s ease-in-out;
+}
+.startButton {
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color: var(--bgColor);
+  padding: 0.5rem 0.7rem;
+  color: var(--buttonColor);
+  border-radius: 0.3rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.startButton:disabled {
+  color: white;
+  background-color: var(--disabledBtn);
+}
+
+.nav-button:hover {
+  color: var(--buttonHover);
+}
+
+.startButton:hover {
+  color: white;
+  background-color: var(--buttonHover);
+}
+
+.dropMenu-menu {
+  border-radius: 0.3rem;
+  background-color: white;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem;
+  position: absolute;
+  top: 1.5rem;
+  left: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+  border: 1px solid var(--secondary);
+  cursor: pointer;
+  pointer-events: none;
+}
+.dropMenu-menu > button {
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.3rem;
+  color: var(--tertiary);
+  width: 100%;
+  border-bottom: 1px solid #c09f8044;
+}
+
+.dropMenu-menu-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropMenu-menu > button:hover {
+  color: var(--buttonHover);
+}
+
+.icon {
+  width: 0.7rem;
+  height: 0.7rem;
+  color: var(--buttonColor);
+}
+
+/* Tutorial frame work design css code here */
+.tutorial {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.299);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; /*Set in Middle*/
+  justify-content: center;
+  align-items: center;
+}
+
+.tutorial-wrapper {
+  display: none;
+}
+
+.tutorial-box {
+  width: 50%;
+  background-color: var(--bgColor);
+  box-shadow: 1rem 1rem 1rem #00000049;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+}
+
+.tutorial-subheader > h3,
+.tutorial-header > h2 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.tutorial-header > h2 {
+  font-size: 1.7rem;
+}
+.tutorial-subheader {
+  font-size: 1.2rem;
+}
+
+.tutorial-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tutorial-description > p {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.tutorial-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+.tutorial-images > img {
+  max-width: 15rem;
+  max-height: 15rem;
+}
+
+.tutorial-active {
+  display: block;
+}
+
+/*Helpful info provide in this special region*/
+.specialRegion {
+  background-color: whitesmoke;
+}
+.specialRegion-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.specialRegion-container > div span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.specialRegion-container > div {
+  display: flex;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+
+.specialRegion-square {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 0.3rem;
+}
+.path > .specialRegion-square {
+  background-color: var(--path);
+}
+
+.wall > .specialRegion-square {
+  background-color: var(--wall);
+}
+.visited > .specialRegion-square {
+  background-color: var(--visited);
+}
+.target > .specialRegion-square {
+  background-image: url("../../Images/house.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.start > .specialRegion-square {
+  background-image: url("../../Images/man.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Describe working here */
+.description-container {
+  background-color: whitesmoke;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.description-content {
+  color: var(--secondary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+}
+
+/* Canvas */
+.board {
+  width: 100%;
+  padding: 1rem 0.5rem;
+}
+.table-container {
+  min-width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+}
+
+.tableNode {
+  border: 1px solid black;
+  background-color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+/*unVisited animation css*/
+#unvisited {
+  background-color: whitesmoke;
+}
+
+/*Visited animation css*/
+#visited {
+  background-color: var(--visited);
+  animation: changeColorAndScaleUp 0.5s ease-in;
+}
+
+/*Wall animation css*/
+#wall {
+  background-color: var(--wall);
+  animation: scaleUp.5s ease-in;
+}
+
+/*Path animation css*/
+#path {
+  background-color: var(--path);
+  animation: scaleUp 0.5s ease-in;
+}
+
+/*Target image css*/
+#target {
+  background-image: url("../../Images/house.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: scaleUp 0.5s ease-in;
+}
+
+/*start animation css*/
+#start {
+  background-image: url("../../Images/man.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: scaleUp 0.5s ease-in;
+}
+
+/*curr animation css*/
+#curr {
+  background-color: var(--curr);
+}
+
+@keyframes changeColorAndScaleUp {
+  from {
+    background-color: inherit;
+    transform: scale(0);
+  }
+  25% {
+    background-color: var(--vis25);
+    transform: scale(0.5);
+  }
+  50% {
+    background-color: var(--vis50);
+    transform: scale(2);
+  }
+  75% {
+    background-color: var(--vis75);
+    transform: scale(1.5);
+  }
+  100% {
+    background-color: inherit;
+    transform: scale(1);
+  }
+}
+
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+
+  25% {
+    transform: scale(0.5);
+  }
+
+  50% {
+    transform: scale(2);
+  }
+
+  75% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
