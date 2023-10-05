@@ -49,6 +49,7 @@ export const clearTable = () => {
 
 // This function sets the node to unvisited
 export const clearPrevSearch = () => {
+    enableAllButtons();// This enables all the buttons
     const nodes = document.querySelectorAll('.tableNode');// This variable represents all the nodes in the table
     // This for loop iterates through the nodes
     nodes.forEach(node => {
