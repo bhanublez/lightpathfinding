@@ -103,7 +103,7 @@ const setDescription = (algorithm) => {
         "BFS is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root and explores all of the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level."
       );
       break;
-    case `Dijkstra's algorithm Search`:
+    case "Dijkstra's algorithm":
       desc.append(
         "This algorithm is used to find the shortest path between two nodes of a weighted graph. It is a greedy algorithm that solves the single-source shortest path problem for a directed graph with non-negative edge weights."
       );
